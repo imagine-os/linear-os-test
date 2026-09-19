@@ -140,8 +140,10 @@ relative dates are variables (`principal.id`, `now`), not operators.
 | `filterTreeJsonSchema()` | Generated JSON Schema of `filterTreeSchema`. |
 | `and`, `or`, `not`, `condition`, `defineFields` | Builders. |
 
-Performance: `toSql` on a 50-condition tree runs in about 0.4 ms including validation (budget 1 ms,
-asserted by `filter.perf.test.ts`). Pass `validated: true` when the tree came from `parseFilter`
+Performance: `toSql` on a 50-condition tree runs in about 0.2 ms including validation (about 0.7 ms
+under V8 coverage instrumentation). `filter.perf.test.ts` asserts a 10 ms budget, sized for shared
+CI runners under coverage, plus near-linear scaling from 5 to 50 conditions (under 40×), which is
+what catches an algorithmic regression. Pass `validated: true` when the tree came from `parseFilter`
 in the same request.
 
 ## 7. Errors
