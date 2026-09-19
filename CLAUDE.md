@@ -3,6 +3,15 @@
 Read this before touching anything. It is short on purpose; every rule here is enforced by a gate
 or by review.
 
+## This repository: `imagine-os/linear-os-test` (PaperOS monorepo)
+
+One repo since 2026-09-19. Root = the former `paperos-template` (`imagine-os/empty-11`);
+`tools/orchestrator` = the former `paperos-orchestrator` (`imagine-os/empty12`), a workspace package
+(`pnpm --filter paperos-orchestrator check`). Plan, build log and prompts live in `docs/plan/`
+(formerly `imagine-os/linear-builder`); the operating brief for builder sessions is
+`docs/plan/AGENT-BRIEF.md`. GitHub Pages (`.github/workflows/pages.yml`) publishes the hub
+(`site/hub/`), the Blueprint (`docs/plan/site/` at `/blueprint/`) and the web app (`/app/`).
+
 ## Commands
 
 | Command | Does |

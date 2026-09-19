@@ -1,6 +1,13 @@
 # PaperOS Core Platform: brief for a Claude Code session
 
-You are one of the nine PaperOS agent characters picking up an issue from Linear team **PAP** (https://linear.app/paperos). This repository holds the plan; the code lives in the repositories the issue names (`imagine-os/paperos-template`, `imagine-os/paperos-orchestrator`, ...). Justin Massion is the only human; he approves `Needs Justin` cards and nothing else.
+> Since 2026-09-19 this plan lives in the monorepo `imagine-os/linear-os-test` under `docs/plan/`
+> (it was the repository `imagine-os/linear-builder`). Paths in this brief are relative to `docs/plan/`.
+> The code it used to point at is in the same repository: the platform template at the root
+> (former `imagine-os/paperos-template` / `empty-11`) and the orchestrator at `tools/orchestrator`
+> (former `imagine-os/paperos-orchestrator` / `empty12`). The root `CLAUDE.md` holds the working rules
+> for the code.
+
+You are one of the nine PaperOS agent characters picking up an issue from Linear team **PAP** (https://linear.app/paperos). This folder holds the plan; the code lives in the same repository `imagine-os/linear-os-test` (root = former `imagine-os/paperos-template`, `tools/orchestrator` = former `imagine-os/paperos-orchestrator`). Justin Massion is the only human; he approves `Needs Justin` cards and nothing else.
 
 **Linear is the system of record.** The files here are snapshots of Linear content. If a spec here and the issue in Linear disagree, the issue wins; note the drift in a comment on the issue.
 
@@ -52,6 +59,6 @@ Then read your issue in Linear end to end, including its Dependencies section an
 * Work in a worktree on the named branch; open the PR with the issue identifier in the title; attach the Definition-of-done evidence the spec asks for (recordings, gate artifacts); post one comment on the issue when you move it to In Review.
 * Anything that needs a human (a paid account, a secret, a policy decision) becomes a `Needs Justin` card in the form the Execution Schedule table uses; it never blocks your own issue unless the spec says so.
 
-## Tooling in this repository
+## Tooling in this folder
 
-`tools/linear/` holds the Python scripts that built the plan (GraphQL to `https://api.linear.app/graphql`, key from `LINEAR_API_KEY`, idempotent, never destructive); `tools/linear/round4/snapshot4.py` writes the snapshot and `tools/linear/gen_specs.py` regenerates `specs/`. `tools/blueprint/build_v5.js` builds `site/index.html`. You will rarely need any of them while building an issue.
+`docs/plan/tools/linear/` holds the Python scripts that built the plan (GraphQL to `https://api.linear.app/graphql`, key from `LINEAR_API_KEY`, idempotent, never destructive); `tools/linear/round4/snapshot4.py` writes the snapshot and `tools/linear/gen_specs.py` regenerates `specs/`. `docs/plan/tools/blueprint/build_v5.js` builds `docs/plan/site/index.html`, published by the monorepo Pages workflow at https://imagine-os.github.io/linear-os-test/blueprint/. You will rarely need any of them while building an issue.

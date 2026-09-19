@@ -1,5 +1,11 @@
 # Platform documents
 
+> Location: `docs/plan/docs/` in the monorepo `imagine-os/linear-os-test` (formerly the repository
+> `imagine-os/linear-builder`). The code these documents plan is in the same repository: the platform
+> template at the root (former `paperos-template`, `imagine-os/empty-11`) and the orchestrator at
+> `tools/orchestrator` (former `paperos-orchestrator`, `imagine-os/empty12`). The Blueprint site
+> (`../site/`) is published at https://imagine-os.github.io/linear-os-test/blueprint/.
+
 Markdown sources of the documents published to Linear (workspace `paperos`). Read them in the order the table gives. The Linear copy is the one sessions link to; these files are the same text at the time of the last edit (round 4, 2026-09-18).
 
 | Order | Document | File | Linear |

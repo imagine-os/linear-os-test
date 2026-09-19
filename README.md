@@ -1,6 +1,18 @@
-# paperos-template
+# linear-os-test: the PaperOS monorepo
 
-[![ci](https://github.com/imagine-os/empty-11/actions/workflows/ci.yml/badge.svg)](https://github.com/imagine-os/empty-11/actions/workflows/ci.yml)
+[![ci](https://github.com/imagine-os/linear-os-test/actions/workflows/ci.yml/badge.svg)](https://github.com/imagine-os/linear-os-test/actions/workflows/ci.yml)
+[![pages](https://github.com/imagine-os/linear-os-test/actions/workflows/pages.yml/badge.svg)](https://github.com/imagine-os/linear-os-test/actions/workflows/pages.yml)
+
+Everything PaperOS in one repository since 2026-09-19:
+
+| Path | Was | What |
+| -- | -- | -- |
+| `/` (root) | `imagine-os/empty-11` (paperos-template) | the platform monorepo: apps, packages, contracts, specs |
+| `tools/orchestrator` | `imagine-os/empty12` (paperos-orchestrator) | build-loop orchestrator, a workspace package |
+| `docs/plan` | `imagine-os/linear-builder` | plan, specs mirror, Blueprint site, build log, prompts, decisions |
+| `site/hub` | new | GitHub Pages hub: https://imagine-os.github.io/linear-os-test/ (Blueprint at `/blueprint/`, web app at `/app/`) |
+
+## paperos-template (root)
 
 The monorepo every PaperOS app is cloned from: pnpm 10 workspaces, Turborepo 2, strict TypeScript
 5.9, Biome 2, Vitest 3, and a Vite 7 + React 19 web shell.
