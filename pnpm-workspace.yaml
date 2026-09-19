@@ -4,6 +4,7 @@ packages:
   - 'apps/*'
   - 'packages/*'
   - 'packages/contracts/*'
+  - 'tools/*'
 
 # One place for every shared version. Packages reference them with `catalog:`.
 catalog:

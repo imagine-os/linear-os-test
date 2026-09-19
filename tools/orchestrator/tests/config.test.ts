@@ -1,8 +1,17 @@
 /** `orchestrator.config.yaml` and its Zod schema (PAP-281). */
 
 import { readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { loadConfig, parseConfig, parseConfigYaml } from "../src/config.js";
+
+/** The package root, so the test also passes from the monorepo root (`pnpm test:coverage`). */
+const committedConfig = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  "..",
+  "orchestrator.config.yaml",
+);
 
 describe("orchestrator config", () => {
   it("has working defaults when nothing is given", () => {
@@ -16,7 +25,7 @@ describe("orchestrator config", () => {
   });
 
   it("parses the committed orchestrator.config.yaml", () => {
-    const config = parseConfigYaml(readFileSync("orchestrator.config.yaml", "utf8"));
+    const config = parseConfigYaml(readFileSync(committedConfig, "utf8"));
     expect(config.mode).toBe("build-loop");
     expect(config.team).toBe("PAP");
     expect(config.repos.map((r) => r.name)).toContain("paperos-orchestrator");
