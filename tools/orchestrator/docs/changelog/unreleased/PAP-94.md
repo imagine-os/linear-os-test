@@ -1,0 +1,5 @@
+* Needs Justin queue designed and enforced in code: `docs/pm/justin-queue.md` (admission categories and refusals, batching into cards of at most five asks, the five-open cap and the `queued-for-justin` overflow, the 48 h default, the reply grammar and who may reply, the SLA on silence).
+* `src/justin-queue/`: Zod `DecisionCard` schema, `admit()` / `admitNext()` / `slotsUsed()` (cap, urgent bump, dedupe by `key`, spend threshold), `parseReply()` (regex + one-typo budget, authorised authors only, per-ask and multi-card targets), `applyReply()`, `defaults()` (fake-clock safe; a hard block never auto-applies), `renderCard()` / `parseCardBlock()`.
+* `templates/needs-justin-card.md`: the card comment, with a fenced `paperos-card` block that reads back.
+* `src/cli/justin-queue.ts`: `pnpm justin:queue list [--check] [--json]`, read-only over the live team (run 2026-09-19: 1 open of 5, NJ-2 on PAP-25, warned as a prose card with no block).
+* Root change to call out: one script line, `justin:queue`, added to `package.json` (PAP-91 owns root files); `zod` was already a dependency on main. No ADR; the card shape is internal to the orchestrator.

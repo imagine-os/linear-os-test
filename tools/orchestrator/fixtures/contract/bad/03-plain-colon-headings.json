@@ -1,0 +1,44 @@
+{
+  "name": "plain-colon-headings",
+  "note": "`Goal:` is not a heading; fix points to the template",
+  "expect": {
+    "ok": false,
+    "errors": ["MISSING_SECTION"]
+  },
+  "issue": {
+    "id": "00000000-0000-4000-8000-000000000015",
+    "identifier": "PAP-9203",
+    "title": "Fixture PAP-9203",
+    "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\nGoal:\n\nDefine what an issue must contain before a machine may build it.\n\nScope:\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\nSpec:\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\nInterface contract:\n\n* Provides: `validateIssue`, `parseSections`.\n\nDefinition of done:\n\n* Fixture suite passes; coverage above 95 percent.\n\nTest plan:\n\n* Unit: each violation code has a pass and fail fixture.\n\nDemo:\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\nEdge cases:\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\nDependencies:\n\nBlocked by PAP-91. Soft: PAP-97.\n\nAgent:\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\nSize:\n\nM\n",
+    "state": {
+      "name": "Backlog",
+      "type": "backlog"
+    },
+    "labels": [
+      {
+        "name": "P0",
+        "group": "Phase"
+      },
+      {
+        "name": "Spec",
+        "group": "Type"
+      },
+      {
+        "name": "Agent",
+        "group": "Surface"
+      },
+      {
+        "name": "Atlas",
+        "group": "Character"
+      }
+    ],
+    "project": {
+      "id": "62374841-346c-46fe-9d20-5d65252227f2",
+      "name": "Project Management & Claude Pipeline"
+    },
+    "parent": null,
+    "children": [],
+    "blockedBy": [],
+    "attachments": []
+  }
+}

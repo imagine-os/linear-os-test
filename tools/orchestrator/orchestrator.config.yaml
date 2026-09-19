@@ -1,0 +1,67 @@
+# PaperOS orchestrator configuration (PAP-281).
+# Validated by `src/config.ts` (Zod). Every field has a default there, so this
+# file only needs to carry what differs from the defaults; it is committed so
+# the running configuration is reviewable in git.
+
+# `build-loop` is Justin's 2026-09-19 org policy (git only, no PRs: In Review
+# means "pushed to main with a Session ended comment"). `pr-flow` is the plan's
+# target mode and returns when Justin says so. Same two values as PAP-93's
+# `ContractMode`; keep them in step.
+mode: build-loop
+
+team: PAP
+
+# Poll cadence for the Ready for Claude queue. `loop.wake()` (PAP-97 webhooks)
+# short-circuits the wait.
+pollIntervalMs: 30000
+
+# Claim slots. PAP-99 replaces the FIFO `pickNext` with a real scheduler; the
+# limit stays here.
+maxParallel: 4
+
+claim:
+  # Max `retry-<n>` requeues before `escalate()` routes to Needs Justin.
+  maxRetries: 2
+  # A claim whose session never reported back is released after this long, so a
+  # crashed replica cannot hold an issue forever (restart recovery does the
+  # same eagerly at startup).
+  staleClaimMs: 3600000
+
+backoff:
+  initialMs: 1000
+  maxMs: 300000
+  factor: 2
+
+db:
+  # SQLite in dev (`node:sqlite`, no native build step); Postgres schema
+  # `orchestrator` in production, same DDL.
+  path: .data/orchestrator.db
+
+http:
+  host: 127.0.0.1
+  port: 8787
+
+# `dry-run` only logs what it would launch: the real Claude Code launch is
+# PAP-282, which registers its own launcher.
+launcher: dry-run
+
+# Repos a session may be launched against (PAP-282 consumes these).
+repos:
+  - name: paperos-orchestrator
+    remote: https://github.com/imagine-os/empty12
+    defaultBranch: main
+  - name: paperos-template
+    remote: https://github.com/imagine-os/empty-11
+    defaultBranch: main
+
+# Character routing table (PAP-103 roster.json); absent today, so claims fall
+# back to `defaultCharacter`.
+charactersPath: roster.json
+defaultCharacter: atlas
+
+# Bot user that claimed issues are assigned to. Null until PAP-48 creates the
+# per-character bot users: `claimNext()` then leaves the assignee untouched and
+# warns once (Edge case "Bot user missing").
+botUserId: null
+
+workspaceIdsPath: linear-workspace.json

@@ -1,0 +1,41 @@
+{
+  "name": "everything-wrong",
+  "note": "",
+  "expect": {
+    "ok": false,
+    "errors": [
+      "BAD_SIZE",
+      "EMPTY_SECTION",
+      "LABEL_PHASE",
+      "LABEL_SURFACE",
+      "LABEL_TYPE",
+      "MISSING_SECTION",
+      "NO_PROJECT",
+      "READY_BUT_BLOCKED"
+    ],
+    "warns": ["LABEL_CHARACTER"]
+  },
+  "issue": {
+    "id": "00000000-0000-4000-8000-000000000032",
+    "identifier": "PAP-9220",
+    "title": "Fixture PAP-9220",
+    "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Size**\n\nTBD\n",
+    "state": {
+      "name": "Ready for Claude",
+      "type": "unstarted"
+    },
+    "labels": [],
+    "project": null,
+    "parent": null,
+    "children": [],
+    "blockedBy": [
+      {
+        "identifier": "PAP-9122",
+        "state": {
+          "name": "Backlog"
+        }
+      }
+    ],
+    "attachments": []
+  }
+}

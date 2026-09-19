@@ -1,0 +1,1573 @@
+{
+  "note": "30 recorded-shape Linear webhook deliveries: 20 distinct Issue.update moves into Ready for Claude (10 conforming leaf fixtures, 10 violating fixtures) plus 10 duplicate deliveries (same webhookId). Replay must yield at most one comment per violating issue and none for conforming ones.",
+  "stateIds": {
+    "Ready for Claude": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+    "Backlog": "0aed245d-f842-423f-bb5c-246061bf9b1b"
+  },
+  "issues": {
+    "00000000-0000-4000-8000-000000000001": {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "identifier": "PAP-9001",
+      "title": "Fixture PAP-9001",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000002": {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "identifier": "PAP-9002",
+      "title": "Fixture PAP-9002",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n## Goal\n\nDefine what an issue must contain before a machine may build it.\n\n## Scope\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n## Spec\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n## Interface contract\n\n* Provides: `validateIssue`, `parseSections`.\n\n## Definition of done\n\n* Fixture suite passes; coverage above 95 percent.\n\n## Test plan\n\n* Unit: each violation code has a pass and fail fixture.\n\n## Demo\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n## Edge cases\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n## Dependencies\n\nBlocked by PAP-91. Soft: PAP-97.\n\n## Agent\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n## Size\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000003": {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "identifier": "PAP-9003",
+      "title": "Fixture PAP-9003",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000004": {
+      "id": "00000000-0000-4000-8000-000000000004",
+      "identifier": "PAP-9004",
+      "title": "Fixture PAP-9004",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [
+        {
+          "identifier": "PAP-9101",
+          "state": {
+            "name": "Done"
+          }
+        },
+        {
+          "identifier": "PAP-9102",
+          "state": {
+            "name": "Canceled"
+          }
+        }
+      ],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000005": {
+      "id": "00000000-0000-4000-8000-000000000005",
+      "identifier": "PAP-9005",
+      "title": "Fixture PAP-9005",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [
+        {
+          "identifier": "PAP-9103",
+          "state": {
+            "name": "In Review"
+          },
+          "branch": "feat/PAP-9103-x",
+          "pr": {
+            "url": "https://github.com/imagine-os/empty12/pull/7",
+            "open": true
+          }
+        }
+      ],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000006": {
+      "id": "00000000-0000-4000-8000-000000000006",
+      "identifier": "PAP-9006",
+      "title": "Fixture PAP-9006",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [
+        {
+          "identifier": "PAP-9104",
+          "state": {
+            "name": "In Review"
+          },
+          "branch": "feat/PAP-9104-x"
+        }
+      ],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000007": {
+      "id": "00000000-0000-4000-8000-000000000007",
+      "identifier": "PAP-9007",
+      "title": "Fixture PAP-9007",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nSmall: half a session.\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000008": {
+      "id": "00000000-0000-4000-8000-000000000008",
+      "identifier": "PAP-9008",
+      "title": "Fixture PAP-9008",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n* Route `/settings/contract` in the staff app.\n* Spec: `specs/pm-linear/issue-contract.spec.yaml`\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Build",
+          "group": "Type"
+        },
+        {
+          "name": "Staff",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000009": {
+      "id": "00000000-0000-4000-8000-000000000009",
+      "identifier": "PAP-9009",
+      "title": "Fixture PAP-9009",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n* Route `/app/[tenant]/inbox`.\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Build",
+          "group": "Type"
+        },
+        {
+          "name": "Customer",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": {
+        "identifier": "PAP-9100",
+        "description": "**Spec**\n\nSee https://linear.app/paperos/document/inbox-spec-0123456789ab"
+      },
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000012": {
+      "id": "00000000-0000-4000-8000-000000000012",
+      "identifier": "PAP-9016",
+      "title": "Fixture PAP-9016",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n* Files: `src/contract/**`, `tests/contract/*.test.ts`\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000013": {
+      "id": "00000000-0000-4000-8000-000000000013",
+      "identifier": "PAP-9201",
+      "title": "Fixture PAP-9201",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000014": {
+      "id": "00000000-0000-4000-8000-000000000014",
+      "identifier": "PAP-9202",
+      "title": "Fixture PAP-9202",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000015": {
+      "id": "00000000-0000-4000-8000-000000000015",
+      "identifier": "PAP-9203",
+      "title": "Fixture PAP-9203",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\nGoal:\n\nDefine what an issue must contain before a machine may build it.\n\nScope:\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\nSpec:\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\nInterface contract:\n\n* Provides: `validateIssue`, `parseSections`.\n\nDefinition of done:\n\n* Fixture suite passes; coverage above 95 percent.\n\nTest plan:\n\n* Unit: each violation code has a pass and fail fixture.\n\nDemo:\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\nEdge cases:\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\nDependencies:\n\nBlocked by PAP-91. Soft: PAP-97.\n\nAgent:\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\nSize:\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000016": {
+      "id": "00000000-0000-4000-8000-000000000016",
+      "identifier": "PAP-9204",
+      "title": "Fixture PAP-9204",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nXL\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000017": {
+      "id": "00000000-0000-4000-8000-000000000017",
+      "identifier": "PAP-9205",
+      "title": "Fixture PAP-9205",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000018": {
+      "id": "00000000-0000-4000-8000-000000000018",
+      "identifier": "PAP-9206",
+      "title": "Fixture PAP-9206",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "P1",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000019": {
+      "id": "00000000-0000-4000-8000-000000000019",
+      "identifier": "PAP-9207",
+      "title": "Fixture PAP-9207",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000020": {
+      "id": "00000000-0000-4000-8000-000000000020",
+      "identifier": "PAP-9208",
+      "title": "Fixture PAP-9208",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000021": {
+      "id": "00000000-0000-4000-8000-000000000021",
+      "identifier": "PAP-9209",
+      "title": "Fixture PAP-9209",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": null,
+      "parent": null,
+      "children": [],
+      "blockedBy": [],
+      "attachments": []
+    },
+    "00000000-0000-4000-8000-000000000023": {
+      "id": "00000000-0000-4000-8000-000000000023",
+      "identifier": "PAP-9211",
+      "title": "Fixture PAP-9211",
+      "description": "**Model / Effort:** Fable 5.1 (`claude-fable-5-1`) / high\n**Goal**\n\nDefine what an issue must contain before a machine may build it.\n\n**Scope**\n\n* In: `src/contract/validate.ts`, fixtures.\n* Out: workspace configuration (PAP-91).\n\n**Spec**\n\n* `validateIssue(issue): ContractResult`.\n* Codes: `MISSING_SECTION`, ...\n\n**Interface contract**\n\n* Provides: `validateIssue`, `parseSections`.\n\n**Definition of done**\n\n* Fixture suite passes; coverage above 95 percent.\n\n**Test plan**\n\n* Unit: each violation code has a pass and fail fixture.\n\n**Demo**\n\nMove a fixture issue with a missing section to Ready; it bounces. One minute.\n\n**Edge cases**\n\n* Webhook delivered twice: idempotent by `webhookId`.\n\n**Dependencies**\n\nBlocked by PAP-91. Soft: PAP-97.\n\n**Agent**\n\nBuilt by Atlas (Decomposer sub-agent); reviewed by Sentinel.\n\n**Size**\n\nM\n",
+      "state": {
+        "name": "Ready for Claude",
+        "type": "unstarted"
+      },
+      "labels": [
+        {
+          "name": "P0",
+          "group": "Phase"
+        },
+        {
+          "name": "Spec",
+          "group": "Type"
+        },
+        {
+          "name": "Agent",
+          "group": "Surface"
+        },
+        {
+          "name": "Atlas",
+          "group": "Character"
+        }
+      ],
+      "project": {
+        "id": "62374841-346c-46fe-9d20-5d65252227f2",
+        "name": "Project Management & Claude Pipeline"
+      },
+      "parent": null,
+      "children": [],
+      "blockedBy": [
+        {
+          "identifier": "PAP-9111",
+          "state": {
+            "name": "Todo"
+          }
+        }
+      ],
+      "attachments": []
+    }
+  },
+  "payloads": [
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0001",
+      "webhookTimestamp": 1789780000001,
+      "createdAt": "2026-09-19T02:01:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "identifier": "PAP-9001",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9001-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9001"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0002",
+      "webhookTimestamp": 1789780000002,
+      "createdAt": "2026-09-19T02:02:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000002",
+        "identifier": "PAP-9002",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9002-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9002"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0003",
+      "webhookTimestamp": 1789780000003,
+      "createdAt": "2026-09-19T02:03:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "identifier": "PAP-9003",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9003-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9003"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0004",
+      "webhookTimestamp": 1789780000004,
+      "createdAt": "2026-09-19T02:04:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000004",
+        "identifier": "PAP-9004",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9004-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9004"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0005",
+      "webhookTimestamp": 1789780000005,
+      "createdAt": "2026-09-19T02:05:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000005",
+        "identifier": "PAP-9005",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9005-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9005"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0006",
+      "webhookTimestamp": 1789780000006,
+      "createdAt": "2026-09-19T02:06:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000006",
+        "identifier": "PAP-9006",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9006-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9006"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0007",
+      "webhookTimestamp": 1789780000007,
+      "createdAt": "2026-09-19T02:07:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000007",
+        "identifier": "PAP-9007",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9007-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9007"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0008",
+      "webhookTimestamp": 1789780000008,
+      "createdAt": "2026-09-19T02:08:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000008",
+        "identifier": "PAP-9008",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9008-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9008"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0009",
+      "webhookTimestamp": 1789780000009,
+      "createdAt": "2026-09-19T02:09:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000009",
+        "identifier": "PAP-9009",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9009-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9009"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0010",
+      "webhookTimestamp": 1789780000010,
+      "createdAt": "2026-09-19T02:10:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000012",
+        "identifier": "PAP-9016",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9016-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9016"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0011",
+      "webhookTimestamp": 1789780000011,
+      "createdAt": "2026-09-19T02:11:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000013",
+        "identifier": "PAP-9201",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9201-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9201"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0012",
+      "webhookTimestamp": 1789780000012,
+      "createdAt": "2026-09-19T02:12:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000014",
+        "identifier": "PAP-9202",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9202-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9202"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0013",
+      "webhookTimestamp": 1789780000013,
+      "createdAt": "2026-09-19T02:13:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000015",
+        "identifier": "PAP-9203",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9203-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9203"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0014",
+      "webhookTimestamp": 1789780000014,
+      "createdAt": "2026-09-19T02:14:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000016",
+        "identifier": "PAP-9204",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9204-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9204"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0015",
+      "webhookTimestamp": 1789780000015,
+      "createdAt": "2026-09-19T02:15:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000017",
+        "identifier": "PAP-9205",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9205-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9205"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0016",
+      "webhookTimestamp": 1789780000016,
+      "createdAt": "2026-09-19T02:16:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000018",
+        "identifier": "PAP-9206",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9206-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9206"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0017",
+      "webhookTimestamp": 1789780000017,
+      "createdAt": "2026-09-19T02:17:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000019",
+        "identifier": "PAP-9207",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9207-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9207"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0018",
+      "webhookTimestamp": 1789780000018,
+      "createdAt": "2026-09-19T02:18:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000020",
+        "identifier": "PAP-9208",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9208-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9208"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0019",
+      "webhookTimestamp": 1789780000019,
+      "createdAt": "2026-09-19T02:19:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000021",
+        "identifier": "PAP-9209",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9209-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9209"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0020",
+      "webhookTimestamp": 1789780000020,
+      "createdAt": "2026-09-19T02:20:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000023",
+        "identifier": "PAP-9211",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9211-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9211"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0001",
+      "webhookTimestamp": 1789780005001,
+      "createdAt": "2026-09-19T02:01:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "identifier": "PAP-9001",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9001-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9001"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0003",
+      "webhookTimestamp": 1789780005003,
+      "createdAt": "2026-09-19T02:03:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000003",
+        "identifier": "PAP-9003",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9003-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9003"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0005",
+      "webhookTimestamp": 1789780005005,
+      "createdAt": "2026-09-19T02:05:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000005",
+        "identifier": "PAP-9005",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9005-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9005"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0007",
+      "webhookTimestamp": 1789780005007,
+      "createdAt": "2026-09-19T02:07:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000007",
+        "identifier": "PAP-9007",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9007-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9007"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0009",
+      "webhookTimestamp": 1789780005009,
+      "createdAt": "2026-09-19T02:09:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000009",
+        "identifier": "PAP-9009",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9009-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9009"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0011",
+      "webhookTimestamp": 1789780005011,
+      "createdAt": "2026-09-19T02:11:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000013",
+        "identifier": "PAP-9201",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9201-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9201"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0013",
+      "webhookTimestamp": 1789780005013,
+      "createdAt": "2026-09-19T02:13:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000015",
+        "identifier": "PAP-9203",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9203-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9203"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0015",
+      "webhookTimestamp": 1789780005015,
+      "createdAt": "2026-09-19T02:15:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000017",
+        "identifier": "PAP-9205",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9205-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9205"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0017",
+      "webhookTimestamp": 1789780005017,
+      "createdAt": "2026-09-19T02:17:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000019",
+        "identifier": "PAP-9207",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9207-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9207"
+    },
+    {
+      "action": "update",
+      "type": "Issue",
+      "webhookId": "wh-0019",
+      "webhookTimestamp": 1789780005019,
+      "createdAt": "2026-09-19T02:19:00.000Z",
+      "actor": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Builder Bot",
+        "type": "user"
+      },
+      "data": {
+        "id": "00000000-0000-4000-8000-000000000021",
+        "identifier": "PAP-9209",
+        "stateId": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+        "state": {
+          "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+          "name": "Ready for Claude"
+        },
+        "branchName": "feat/PAP-9209-fixture"
+      },
+      "updatedFrom": {
+        "stateId": "0aed245d-f842-423f-bb5c-246061bf9b1b",
+        "updatedAt": "2026-09-19T01:00:00.000Z"
+      },
+      "url": "https://linear.app/paperos/issue/PAP-9209"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "team": { "id": "0ee78894-89f8-4376-a829-f8685dbc1868", "key": "PAP", "name": "PaperOS" },
+  "states": [
+    { "id": "185d9592-5ff4-4e22-a276-1855a30f69e0", "name": "Triage", "type": "triage" },
+    { "id": "0aed245d-f842-423f-bb5c-246061bf9b1b", "name": "Backlog", "type": "backlog" },
+    { "id": "f3cf0bbf-e4a5-4593-9148-f8ec6ea2d575", "name": "Todo", "type": "unstarted" },
+    {
+      "id": "9f24c1d6-b544-4d67-be55-6a1da5323ee2",
+      "name": "Ready for Claude",
+      "type": "unstarted"
+    },
+    { "id": "0efe97be-429e-42b9-8c63-213a89f06914", "name": "In Progress", "type": "started" },
+    { "id": "38a800c6-7918-4032-9e06-61cbd8adefd0", "name": "In Review", "type": "started" },
+    { "id": "b8037cb1-0718-412f-b913-82b5e4f19555", "name": "Needs Justin", "type": "started" },
+    { "id": "cd5b3745-c3c2-440f-a04c-15de771467ba", "name": "Done", "type": "completed" },
+    { "id": "51c3888d-92a0-44bf-a94f-74ec4c3a0766", "name": "Canceled", "type": "canceled" },
+    { "id": "b9c3b711-0ffb-4dd3-acf5-4082e18dca87", "name": "Duplicate", "type": "duplicate" }
+  ],
+  "labels": [
+    { "id": "7c4369ee-8fca-4ed1-b4c7-4a0ecae0324e", "name": "P0", "parentName": "Phase" },
+    { "id": "bd5d8fb4-f9b8-4c2b-ad55-291f515c192c", "name": "Phase", "parentName": null },
+    { "id": "9b3bfd13-b0ab-415e-aad7-e8d351c5750e", "name": "Infra", "parentName": "Type" },
+    { "id": "1f5e6be9-18f8-4777-a9e7-ee2ab8aec9ea", "name": "Type", "parentName": null },
+    { "id": "bb6ce0ab-cc34-4fc2-9973-ade330d2af8f", "name": "Agent", "parentName": "Surface" },
+    { "id": "086b098d-a94f-4bae-815c-3e6d56d514dc", "name": "Surface", "parentName": null },
+    { "id": "beea2f68-dbc8-4a56-8213-1aeb46d24355", "name": "Deferred", "parentName": null },
+    { "id": "1b2a2665-6f6a-45c4-a5ce-ceaf978966e2", "name": "Bug", "parentName": null }
+  ],
+  "templates": [
+    {
+      "id": "591f7807-8322-4bda-935e-9a73d221eec3",
+      "name": "PaperOS Spec",
+      "sections": [
+        "Goal",
+        "Scope",
+        "In:",
+        "Out:",
+        "Design / Approach",
+        "Page spec (logic, access, data, integrations, layout, components)",
+        "Interfaces & contracts",
+        "Acceptance criteria",
+        "Verification",
+        "Edge cases & failure modes",
+        "Dependencies & risks",
+        "Artifacts to produce"
+      ]
+    }
+  ],
+  "projects": [
+    { "id": "62374841-346c-46fe-9d20-5d65252227f2", "name": "Project Management & Claude Pipeline" }
+  ],
+  "cycles": [
+    { "id": "e8272686-b4d3-4ac7-a89e-ba227bd63250", "name": "C1 Foundation & core systems" }
+  ],
+  "teamSettings": {
+    "issueEstimationType": "fibonacci",
+    "cyclesEnabled": true,
+    "triageEnabled": true
+  }
+}
