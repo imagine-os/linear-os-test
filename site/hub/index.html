@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaperOS</title>
+<meta name="description" content="PaperOS hub: Blueprint, web app demo, build log, plan docs, orchestrator and Linear team in one place.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #f7f6f2; --fg: #1b1b1f; --muted: #5a5a63; --card: #ffffff; --line: #d9d7d0;
+    --accent: #1f5fbf; --accent-fg: #ffffff; --badge-bg: #fff3c4; --badge-fg: #5c4300; --badge-line: #e6c65a;
+    --focus: #ff8a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141417; --fg: #f1f0ec; --muted: #a8a7b0; --card: #1f1f24; --line: #34343b;
+      --accent: #7fb0ff; --accent-fg: #0d1a33; --badge-bg: #3a3010; --badge-fg: #ffe28a; --badge-line: #8a6d1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { font-size: clamp(18px, 1.1vw + 12px, 34px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  main { width: min(100% - 32px, 72rem); margin: 0 auto; padding: clamp(24px, 4vh, 72px) 0 32px; flex: 1; }
+  h1 { font-size: 2.6rem; line-height: 1.1; margin: 0 0 .25rem; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); font-size: 1.15rem; margin: 0 0 1.5rem; max-width: 40em; }
+  .note {
+    display: inline-flex; align-items: flex-start; gap: .6em; flex-wrap: wrap;
+    background: var(--badge-bg); color: var(--badge-fg); border: 2px solid var(--badge-line);
+    border-radius: 12px; padding: .6em .9em; margin: 0 0 2rem; font-size: .95rem; max-width: 46em;
+  }
+  .note strong { white-space: nowrap; text-transform: uppercase; letter-spacing: .06em; font-size: .85em; padding-top: .15em; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+  nav a {
+    display: flex; flex-direction: column; gap: .3em; min-height: 44px; height: 100%;
+    padding: 1.1em 1.2em; background: var(--card); color: var(--fg); text-decoration: none;
+    border: 2px solid var(--line); border-radius: 16px; transition: border-color .12s, transform .12s;
+  }
+  nav a:hover { border-color: var(--accent); }
+  nav a:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; border-color: var(--accent); }
+  nav a:active { transform: scale(.99); }
+  nav a .t { font-size: 1.35rem; font-weight: 650; color: var(--accent); }
+  nav a .d { color: var(--muted); font-size: .95rem; }
+  nav a .k { font-size: .8rem; color: var(--muted); margin-top: auto; padding-top: .4em; }
+  .primary a { border-color: var(--accent); background: var(--accent); color: var(--accent-fg); }
+  .primary a .t, .primary a .d, .primary a .k { color: inherit; }
+  footer { width: min(100% - 32px, 72rem); margin: 0 auto; padding: 16px 0 32px; color: var(--muted); font-size: .9rem; }
+  footer a { color: inherit; min-height: 44px; display: inline-flex; align-items: center; }
+  footer a:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { nav a { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>PaperOS</h1>
+  <p class="lead">One repository, one hub. Everything built so far for PaperOS, published from <code>imagine-os/linear-os-test</code>.</p>
+
+  <p class="note" role="note">
+    <strong>Hub v0</strong>
+    <span>Role switcher, developer mode and the demo simulator are not wired yet. The English / Spanish toggle is not wired yet either. Links below are live.</span>
+  </p>
+
+  <nav aria-label="PaperOS destinations">
+    <ul>
+      <li class="primary"><a href="/linear-os-test/blueprint/">
+        <span class="t">Blueprint</span>
+        <span class="d">Vision, decisions, phases, projects and the 983-issue plan in one browsable page.</span>
+        <span class="k">imagine-os.github.io/linear-os-test/blueprint/</span></a></li>
+      <li class="primary"><a href="/linear-os-test/app/">
+        <span class="t">Web app demo</span>
+        <span class="d">The Vite + React shell from <code>apps/web</code>, built from the latest main.</span>
+        <span class="k">imagine-os.github.io/linear-os-test/app/</span></a></li>
+      <li><a href="https://github.com/imagine-os/linear-os-test/blob/main/docs/plan/docs/build-log/2026-09-19.md">
+        <span class="t">Build log</span>
+        <span class="d">What happened on 2026-09-19: kickoff, takeover, CI fix, parked branches, time and usage.</span>
+        <span class="k">GitHub: docs/plan/docs/build-log/2026-09-19.md</span></a></li>
+      <li><a href="https://github.com/imagine-os/linear-os-test/tree/main/docs/plan/docs/">
+        <span class="t">Plan docs</span>
+        <span class="d">Blueprint, contracts, module system, roster, schedule, decisions and prompts.</span>
+        <span class="k">GitHub: docs/plan/docs/</span></a></li>
+      <li><a href="https://github.com/imagine-os/linear-os-test/tree/main/tools/orchestrator">
+        <span class="t">Orchestrator</span>
+        <span class="d">Linear workspace-as-code, the claim / promote loop and builder-session plumbing.</span>
+        <span class="k">GitHub: tools/orchestrator</span></a></li>
+      <li><a href="https://linear.app/paperos/team/PAP">
+        <span class="t">Linear team</span>
+        <span class="d">Team PAP: the system of record for every issue, state and decision.</span>
+        <span class="k">linear.app/paperos/team/PAP</span></a></li>
+    </ul>
+  </nav>
+</main>
+<footer>
+  <a href="https://github.com/imagine-os/linear-os-test">Repository: github.com/imagine-os/linear-os-test</a>
+</footer>
+</body>
+</html>

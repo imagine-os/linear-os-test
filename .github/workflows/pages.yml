@@ -1,0 +1,77 @@
+name: pages
+
+# Publishes https://imagine-os.github.io/linear-os-test/ from main:
+#   /            site/hub          the PaperOS hub (static)
+#   /blueprint/  docs/plan/site    the Blueprint page (index.html + data.json + previous/)
+#   /app/        apps/web dist     the web shell, built with BASE_PATH=/linear-os-test/app/
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  TURBO_TELEMETRY_DISABLED: '1'
+  DO_NOT_TRACK: '1'
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build web app for /linear-os-test/app/
+        env:
+          BASE_PATH: /linear-os-test/app/
+          VITE_GIT_SHA: ${{ github.sha }}
+        run: pnpm turbo build --filter=@paperos/web
+
+      - name: Assemble _site
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/blueprint _site/app
+          cp site/hub/index.html _site/index.html
+          cp -R docs/plan/site/. _site/blueprint/
+          cp -R apps/web/dist/. _site/app/
+          touch _site/.nojekyll
+          find _site -maxdepth 2 | sort
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
