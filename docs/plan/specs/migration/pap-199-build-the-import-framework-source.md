@@ -1,0 +1,101 @@
+---
+identifier: "PAP-199"
+title: "Build the import framework: source connector, schema-mapping UI, dry run, validation, rollback"
+project: "migration"
+projectName: "Migration & Import Tools"
+phase: "P1"
+type: "Build"
+priority: 2
+surfaces: ["Developer"]
+milestone: "Import framework and CSV"
+state: "Backlog"
+parent: null
+children: ["PAP-347", "PAP-348", "PAP-349"]
+blockedBy: ["PAP-37", "PAP-43", "PAP-164", "PAP-198", "PAP-340", "PAP-564", "PAP-565", "PAP-616"]
+blocks: ["PAP-200", "PAP-201", "PAP-202", "PAP-203", "PAP-204", "PAP-205", "PAP-206", "PAP-207", "PAP-208", "PAP-414", "PAP-417", "PAP-420", "PAP-423", "PAP-426", "PAP-816", "PAP-818"]
+key: "migration/import-framework"
+url: "https://linear.app/paperos/issue/PAP-199/build-the-import-framework-source-connector-schema-mapping-ui-dry-run"
+source: "Linear snapshot 2026-09-18T14:58Z (plan/linear-snapshot-live.json)"
+updatedAt: "2026-09-18T14:07:26.635Z"
+model: null
+effort: null
+estimate: null
+dueDate: "2026-09-28"
+cycle: null
+---
+
+# PAP-199: Build the import framework: source connector, schema-mapping UI, dry run, validation, rollback
+
+**Model / Effort:** set on children (umbrella is never claimed)
+
+**Goal**
+
+Build the one pipeline every importer uses: a `SourceConnector` interface, a mapping model, an engine that streams records in batches with transforms and relation resolution, a dry run that validates without writing, a commit with progress, and a rollback that reverses a run exactly. Importers then only implement connectors. This issue is the umbrella for three work packages.
+
+**Scope**
+
+Work packages (full specs in the project document, ready to become sub-issues when the Linear issue cap lifts):
+
+* **WP1 Connector interface, mapping model and engine** (M): `SourceConnector` (`discover`, `stream`, `fetchAttachment`, `capabilities`), tables `import_source`, `import_mapping`, `import_run`, `import_run_item`, pg-boss engine in batches of 500, transforms, two-pass relations, resumability, in-memory fixture connector, CLI `pnpm paperos import`.
+* **WP2 Dry run, commit and rollback** (M): transaction-rolled dry run with grouped report, `before` capture, exact rollback with conflict listing and `--force`, cancellation, connector `onRollback` hook for ledger-backed tables.
+* **WP3 Type inference, wizard and run history** (M): `infer.ts`, wizard routes under `_app/settings/import/`, `registerWizardStep`, run history with drill-down and guarded rollback button.
+
+Out: concrete connectors (PAP-200 to PAP-207), scheduled re-sync, two-way sync.
+
+**Spec**
+
+* Writes go through the PAP-164 record API so triggers, audit (`reason: import:<run_id>`) and search apply; never raw SQL.
+* Mapping beats dedupe key; both consult PAP-201 once it lands.
+* Limits: 5M rows and 10 GB attachments per run, 2 concurrent runs per tenant, refused before start.
+* Progress via PAP-143 shapes with 2 s polling fallback.
+* Build order WP1 -> WP2 -> WP3 on branches `PAP-199/wp<n>-<slug>`; each reported in a comment here.
+
+**Interface contract**
+
+Provides: `SourceConnector`, `SourceSchema`, `SourceRecord`, `MappingDefinition` (Zod), `registerConnector()`, `registerWizardStep()`, `runImport()`, `runDry()`, `rollbackRun()`, `inferTypes()`, tables above with RLS, event `import.run.progress`, components `MappingTable`, `RunReport`, `RunHistory`, CLI. Consumes: PAP-164 field types and record API, PAP-43 pg-boss, PAP-37 storage, PAP-38 audit, PAP-143 (soft), PAP-165 grid (soft), PAP-198 `index.json`. Consumers: every migration issue, PAP-208 `runs.*` procedures, PAP-207 applier.
+
+**Definition of done**
+
+* All three work packages merged and reported.
+* Integration test `import-framework.e2e`: fixture connector wizard end to end with a deliberate error in dry run, commit of 10k rows, edit one record, rollback shows one conflict, `--force` completes; audit rows and mappings verified.
+* 100k-row fixture run under 5 minutes on staging (bench committed); resume after crash proven.
+* `docs/migration/framework.md`; CHANGELOG; Linear comment with recording and bench.
+
+**Test plan**
+
+* Vitest per WP (registry, transforms, inference on 15 columns, before-state, rollback ordering, cancellation).
+* Property test: random import and rollback sequences return a table to its prior hash.
+* Playwright: wizard, report, history; visual baselines at 320, 375, 768, 1024, 1280, 1536 and 1920 in light and dark; axe clean; keyboard-only mapping step.
+* Bench script in `bench/`.
+
+**Demo**
+
+Reviewer opens Settings > Import, picks the fixture connector, accepts inferred types, reads the dry-run report, commits, then rolls back from Run history. Under two minutes.
+
+**Edge cases**
+
+* Field type changes mid-stream: item error, not a crash.
+* Circular relations: two-pass resolution.
+* RLS denies the actor: reported in dry run.
+* Attachment fails after record created: error item plus retry job.
+* User cancels: `cancelled` with partial rollback offered.
+
+**Dependencies**
+
+PAP-164 and PAP-43 (hard), PAP-198 (interface inputs), PAP-37, PAP-38, PAP-143 and PAP-165 (soft). Blocks PAP-200 to PAP-208 and the pending gap issues.
+
+*Round 4 (2026-09-18): PAP-332 soft: the in-app schema editor (09-29) lands after the import framework milestone (09-28); until it lands, the import framework creates tables and fields through the PAP-164 field-type API directly; adopt the schema editor's conversion helpers when PAP-332 lands. The* `blocks` *relation PAP-332 -> PAP-199 was removed.*
+
+*Round 4 (2026-09-18): PAP-334 soft: bulk operations, trash and restore (09-29) land after the import framework milestone (09-28); until it lands, rollback uses the import run's own undo log; switch to soft-delete trash when PAP-334 lands. The* `blocks` *relation PAP-334 -> PAP-199 was removed.*
+
+**Agent**
+
+Built by Scout (Import Mapper) with Nova on the record API and Iris on the wizard. Reviewed by Sentinel (Code Reviewer, Security Auditor, Edge Case Hunter) and Atlas.
+
+**Size**
+
+L umbrella; three M work packages. Pending sub-issue specs: [Round 2 pending issues: migration (20)](https://linear.app/paperos/document/round-2-pending-issues-migration-20-6cb063cc1be6)
+
+**Module boundary**
+
+This umbrella is the Migration & Import Tools half of the PaperOS Module System (`docs/module-system.md`). The `migration` module implements `@paperos/contract-migration` (`SourceConnector`, mapping model, import run states, external id map, export archive, template pack, migration interview). Connectors are implementations behind `SourceConnector`; target modules are written through `contract-tables`, `contract-collab`, `contract-business-core` and `contract-pm-linear` ports, never their tables. The module may import `@paperos/core`, those contracts, `contract-data-layer` and its own package. Its manifest declares `provides: [{ contract: '@paperos/contract-migration', version: '0.1.0' }]`, `owner: { agent: 'Scout', project: 'migration' }` and `swapRisk: 'low'`. The contract package is published by PAP-492 (`module/migration/contract`), proven by PAP-494 (`module/migration/conformance`) and bound into `@paperos/kernel` by PAP-496 (`module/migration/wire`); children of this issue inherit this boundary and may not add a dependency the manifest does not declare (lint rules R7 to R11).
