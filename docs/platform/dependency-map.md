@@ -6,7 +6,7 @@ Generated from `ownership.json` and the import graph of the working tree.
 Run `pnpm gen:dep-map` after any import or ownership change and commit both files;
 `pnpm lint:deps` and the `@paperos/boundaries` tests fail when the committed copy is stale.
 
-Packages on disk today: **19**. Import edges: **5**, of them undeclared: **0**.
+Packages on disk today: **19**. Import edges: **6**, of them undeclared: **0**.
 
 ## Imports today
 
@@ -44,6 +44,7 @@ flowchart LR
     packages_config_ts["config-ts<br/><small>app-shell</small>"]
   end
   apps_web --> packages_core
+  apps_web --> packages_tokens
   apps_web --> packages_ui
   packages_boundaries --> packages_core
   packages_db --> packages_core

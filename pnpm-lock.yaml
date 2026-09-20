@@ -92,6 +92,9 @@ importers:
       '@paperos/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@paperos/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
       '@paperos/ui':
         specifier: workspace:*
         version: link:../../packages/ui

@@ -63,16 +63,29 @@ or `-`), **Status** (`live`, `stub`, `planned`).
 | API | `@paperos/core/config`: `publicEnv`, `serverEnv`, `getPublicEnv()`, `getServerEnv()`, `loadConfig(target)` — the typed, fail-fast env accessors every server/browser context reads instead of `process.env` / `import.meta.env` | PAP-17 | - | live |
 | API | `@paperos/core/config`: `SecretStore` / `getSecretStore()` — client-side secret storage per target (`WebSecretStore` live; `TauriKeychainStore` / `MobileSecureStore` not wired yet, see `apps/desktop/README.md` / `apps/mobile/README.md`) | PAP-17 | - | live (web) / stub (desktop, mobile) |
 
-The placeholder route declares no actions: it has no controls. The first page with a control adds
-its actions registry and its rows here; the shape it declares against is the `Action` row above
-(PAP-150, [`docs/platform/input-events.md`](../platform/input-events.md) section 5).
+The placeholder route (`apps/web/src/App.tsx`) declares its actions in `apps/web/src/actions.ts`
+(`WEB_SHELL_ACTIONS`, owner `/`), in the `Action` shape above (PAP-150,
+[`docs/platform/input-events.md`](../platform/input-events.md) section 5). Its rows:
+
+| Surface | Ability | Owner issue | Permission | Status |
+| -- | -- | -- | -- | -- |
+| Action | `shell.toggleLocale` — switch the UI between English and Spanish (also sets `<html lang>`) | PAP-16 (placeholder, 2026-09-20) | - | live |
+| Action | `shell.openBlueprint`, `shell.openHub`, `shell.openRepository`, `shell.openBuildLog`, `shell.openDocs` — open the published Blueprint, the hub, the GitHub repository, the build log and `docs/README.md` | PAP-16 (placeholder, 2026-09-20) | - | live (links) |
+| Action | `shell.signIn` — sign in | PAP-16 (placeholder, 2026-09-20) | - | stub (declared, "not wired yet" toast) |
+| Action | `shell.switchRole` — view the app as another role | PAP-16 (placeholder, 2026-09-20) | `shell:switch-role` | stub (declared, "not wired yet" toast) |
+| Action | `shell.toggleDevMode` — toggle developer mode | PAP-16 (placeholder, 2026-09-20) | `shell:dev-mode` | stub (declared, "not wired yet" toast) |
+| Action | `shell.openCommandPalette` — open the command palette | PAP-16 (placeholder, 2026-09-20) | - | stub (declared, "not wired yet" toast) |
+
+`apps/web` may not import `packages/input` (`ownership.json`, R4), so the registry is a
+field-for-field copy of `ActionDeclaration`; it switches to `defineAction` when PAP-476 publishes
+`@paperos/contract-input`.
 | CLI | `pnpm --filter @paperos/spec gen:schemas` — regenerate `packages/spec/schema/page.spec.schema.json` and `docs/platform/page-spec.md` from the Zod schema; `gen:schemas:check` exits 1 when stale (drift test also runs in `pnpm test`) | PAP-114 | - | live |
 | CLI | `pnpm --filter @paperos/spec parse <file.spec.yaml>` — parse and validate one page spec, print every issue with code, path, line:col and hint; exit 0 clean, 1 errors, 2 usage. Smoke tool; PAP-115 ships `paperos-spec validate` | PAP-114 | - | stub (one-file demo CLI) |
 | API | `@paperos/spec`: `parseSpec(yaml, { filename?, knownRoutes? })`, `validatePageSpec(object)`, `PageSpecSchema`, `pageActions(spec)`, `notWiredComponents(spec)`, `migrateSpec(doc)`, `buildPageJsonSchema()` | PAP-114 | - | live |
 | Action | `logic.actions.<id>` in every `specs/pages/<page>.spec.yaml` — the per-page actions registry (`intent` message key, `permission`, `input`, `status`); `pageActions()` flattens to `<page>.<action>` for the WebMCP surface and the voice controller | PAP-114 | per action (`permission`) | live (schema); consumers PAP-16 / WebMCP planned |
 
-The placeholder route declares no actions: it has no controls. Page actions are declared in the page
-specs (`logic.actions`, PAP-114): `specs/pages/customer-invoices.spec.yaml` declares `openInvoice`,
+The placeholder route's own actions are the `shell.*` rows above. Page actions are declared in the
+page specs (`logic.actions`, PAP-114): `specs/pages/customer-invoices.spec.yaml` declares `openInvoice`,
 `payInvoice`, `downloadPdf` (not wired), `retryLoad`; `specs/pages/staff-settings.spec.yaml` declares
 `inviteMember`, `changeRole`, `removeMember`, `saveBranding` (not wired), `toggleModule`, `retryLoad`.
 They become live WebMCP abilities when PAP-16 mounts the registry.

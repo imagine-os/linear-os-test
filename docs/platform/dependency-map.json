@@ -1675,6 +1675,14 @@
     },
     {
       "from": "apps/web",
+      "to": "packages/tokens",
+      "kind": "import",
+      "undeclared": false,
+      "issues": ["PAP-13", "PAP-16", "PAP-18"],
+      "via": ["apps/web/src/main.tsx"]
+    },
+    {
+      "from": "apps/web",
       "to": "packages/ui",
       "kind": "import",
       "undeclared": false,

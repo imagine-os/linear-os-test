@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "PaperOS web shell (placeholder route until PAP-16 lands the router).",
+  "description": "PaperOS web shell (placeholder screen until PAP-16 lands the router).",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@paperos/core": "workspace:*",
+    "@paperos/tokens": "workspace:*",
     "@paperos/ui": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"

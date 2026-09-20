@@ -1,26 +1,10 @@
 /*
- * Placeholder styling. Design tokens land with PAP-66; until then these values are
- * local and deliberately few. Sized for 360 px phones through 3840 px TVs: the
- * type scale is viewport-relative so the page stays legible from ten feet.
+ * Placeholder screen styling on top of the design tokens (`@paperos/tokens`, PAP-66):
+ * colours, type roles, spacing, radii and z-index all come from `--pos-*`. Sized for
+ * 360 px phones through 3840 px TVs: the token type scale is viewport-relative and the
+ * layout adds a fluid gutter and a fluid headline so the page stays legible from ten feet.
+ * Components move to `@paperos/ui` when it lands; nothing here is meant to outlive PAP-16.
  */
-
-:root {
-  --paperos-bg: #0b0d10;
-  --paperos-fg: #f4f6f8;
-  --paperos-muted: #9aa4b2;
-  --paperos-accent: #6ea8fe;
-  --paperos-gutter: clamp(1rem, 4vw, 6rem);
-  color-scheme: dark light;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --paperos-bg: #f7f8fa;
-    --paperos-fg: #14181d;
-    --paperos-muted: #5a6572;
-    --paperos-accent: #1d4ed8;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -34,60 +18,282 @@ body {
 }
 
 body {
-  background: var(--paperos-bg);
-  color: var(--paperos-fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--pos-color-bg-canvas);
+  color: var(--pos-color-fg-default);
+  font-family: var(--pos-font-family-sans);
+  font-size: var(--pos-font-size-md);
+  line-height: var(--pos-font-line-height-normal);
   -webkit-text-size-adjust: 100%;
 }
 
 .page {
+  --page-gutter: clamp(1rem, 4vw, 6rem);
+  --page-measure: 88rem;
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 3rem);
-  justify-content: center;
-  align-items: flex-start;
+  gap: clamp(1.5rem, 3vw, 4rem);
   min-height: 100svh;
-  padding: var(--paperos-gutter);
-  padding-block: max(var(--paperos-gutter), env(safe-area-inset-top));
+  padding-inline: max(var(--page-gutter), env(safe-area-inset-left), env(safe-area-inset-right));
+  padding-block: max(var(--page-gutter), env(safe-area-inset-top))
+    max(var(--page-gutter), env(safe-area-inset-bottom));
 }
 
-.page__title {
+.page__header,
+.page__main,
+.page__footer {
+  width: min(100%, var(--page-measure));
+  margin-inline: auto;
+}
+
+.page__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pos-space-12) var(--pos-space-16);
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--pos-space-8);
   margin: 0;
-  /* 2rem on a 360 px phone, ~7rem on a 3840 px TV. */
-  font-size: clamp(2rem, 4.5vw, 7rem);
-  font-weight: 650;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
+  margin-inline-end: auto;
+}
+
+.brand__name {
+  font-size: var(--pos-font-size-xl);
+  font-weight: var(--pos-font-weight-bold);
+  letter-spacing: -0.01em;
+}
+
+.brand__template {
+  color: var(--pos-color-fg-muted);
+  font-size: var(--pos-font-size-sm);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--pos-space-4) var(--pos-space-12);
+  border: 1px solid var(--pos-color-border-default);
+  border-radius: var(--pos-radius-role-pill);
+  background: var(--pos-color-bg-raised);
+  color: var(--pos-color-fg-muted);
+  font-size: var(--pos-font-size-sm);
+  font-weight: var(--pos-font-weight-medium);
+  line-height: var(--pos-font-line-height-tight);
+  white-space: nowrap;
+}
+
+.badge--warning {
+  border-color: var(--pos-color-warning-border);
+  background: var(--pos-color-warning-bg);
+  color: var(--pos-color-warning-fg);
+}
+
+.badge--small {
+  padding-block: 0;
+  font-size: var(--pos-font-size-xs);
 }
 
 .page__main {
   display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.5vw, 3.5rem);
+}
+
+.page__title {
+  margin: 0;
+  /* ~2.25rem on a 360 px phone, ~6.5rem on a 3840 px TV. */
+  font-size: clamp(2.25rem, 1.5rem + 3.4vw, 6.5rem);
+  font-weight: var(--pos-font-weight-bold);
+  line-height: var(--pos-font-line-height-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.page__lead {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--pos-color-fg-muted);
+  font-size: var(--pos-font-size-lg);
+  line-height: var(--pos-font-line-height-relaxed);
+  text-wrap: pretty;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pos-space-16);
+}
+
+.section__title {
+  margin: 0;
+  font-size: var(--pos-font-size-xl);
+  font-weight: var(--pos-font-weight-semibold);
+  line-height: var(--pos-font-line-height-snug);
+}
+
+.section__note {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--pos-color-fg-muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--pos-space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pos-space-4);
+  min-height: var(--pos-size-target-min);
+  padding: var(--pos-space-16) var(--pos-space-20);
+  border: 1px solid var(--pos-color-border-default);
+  border-radius: var(--pos-radius-role-card);
+  background: var(--pos-color-bg-surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--pos-motion-duration-fast) var(--pos-motion-ease-standard);
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: var(--pos-color-border-strong);
+}
+
+.card__title {
+  color: var(--pos-color-accent-default);
+  font-weight: var(--pos-font-weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.card__hint {
+  color: var(--pos-color-fg-muted);
+  font-size: var(--pos-font-size-sm);
+}
+
+.controls {
+  display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--pos-space-12);
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pos-space-8);
+  /* Touch and pen targets never go below 44 px. */
+  min-height: var(--pos-size-target-min);
+  min-width: var(--pos-size-target-min);
+  padding: var(--pos-space-8) var(--pos-space-16);
+  border: 1px solid var(--pos-color-border-strong);
+  border-radius: var(--pos-radius-role-control);
+  background: var(--pos-color-bg-surface);
+  color: var(--pos-color-fg-default);
+  font: inherit;
+  font-weight: var(--pos-font-weight-medium);
+  cursor: pointer;
+}
+
+.control:hover {
+  background: var(--pos-color-bg-raised);
+}
+
+.control--placeholder {
+  border-style: dashed;
+}
+
+.control--ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+.page__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pos-space-12) var(--pos-space-24);
+  margin-top: auto;
+  padding-top: var(--pos-space-16);
+  border-top: 1px solid var(--pos-color-border-default);
+  color: var(--pos-color-fg-muted);
+  font-size: var(--pos-font-size-sm);
+}
+
+.page__build,
+.page__note {
+  margin: 0;
 }
 
 .page__sha {
   display: inline-flex;
   align-items: center;
-  /* Touch and pen targets never go below 44 px. */
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.5rem 1rem;
-  border: 1px solid color-mix(in srgb, var(--paperos-muted) 45%, transparent);
-  border-radius: 0.6rem;
-  color: var(--paperos-muted);
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-  font-size: clamp(1rem, 1.4vw, 2.25rem);
-  line-height: 1.3;
+  min-height: var(--pos-size-target-min);
+  padding: var(--pos-space-4) var(--pos-space-12);
+  border: 1px solid var(--pos-color-border-default);
+  border-radius: var(--pos-radius-role-control);
+  font-family: var(--pos-font-family-mono);
+  font-size: var(--pos-font-size-sm);
   overflow-wrap: anywhere;
+}
+
+.toast-region {
+  position: fixed;
+  inset-inline: 0;
+  bottom: max(var(--pos-space-16), env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  padding-inline: var(--pos-space-16);
+  pointer-events: none;
+  z-index: var(--pos-z-toast);
+}
+
+.toast {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pos-space-8) var(--pos-space-16);
+  max-width: min(100%, 48rem);
+  padding: var(--pos-space-12) var(--pos-space-16);
+  border: 1px solid var(--pos-color-warning-border);
+  border-radius: var(--pos-radius-role-overlay);
+  background: var(--pos-color-warning-bg);
+  color: var(--pos-color-warning-fg);
+  box-shadow: var(--pos-shadow-role-3);
+  pointer-events: auto;
+  animation: toast-enter var(--pos-motion-duration-base) var(--pos-motion-ease-enter);
+}
+
+.toast__text {
+  flex: 1 1 16rem;
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    translate: 0 0.5rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 /* Focus is always visible, for keyboard, TV remote and gamepad d-pad alike. */
 :focus-visible {
-  outline: 3px solid var(--paperos-accent);
+  outline: 3px solid var(--pos-color-focus);
   outline-offset: 3px;
-  border-radius: 0.6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
