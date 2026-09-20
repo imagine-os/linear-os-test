@@ -10,3 +10,5 @@ under that prefix. Console errors: 0. Failed requests: 0. Text present at both v
 | `app-after-desktop.png` | 1920x1080 |
 | `app-after-toast.png` | 1280x800 after activating the `Sign in` placeholder: the "not wired yet" toast |
 | `app-after-es.png` | 1280x800 after the EN/ES toggle: Spanish copy, `<html lang="es">` |
+| `app-live-desktop.png` | the deployed https://imagine-os.github.io/linear-os-test/app/ after the Pages redeploy of `f523061`, 1920x1080, 0 console errors |
+| `app-live-mobile.png` | same live page at 390x844, 0 console errors |
